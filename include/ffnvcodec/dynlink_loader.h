@@ -265,6 +265,8 @@ typedef struct CuvidFunctions {
     tcuvidGetDecoderCaps *cuvidGetDecoderCaps;
     tcuvidCreateDecoder *cuvidCreateDecoder;
     tcuvidDestroyDecoder *cuvidDestroyDecoder;
+    tcuvidRegisterDecodeSurfaces *cuvidRegisterDecodeSurfaces;
+    tcuvidDecodePictureAsync *cuvidDecodePictureAsync;
     tcuvidDecodePicture *cuvidDecodePicture;
     tcuvidGetDecodeStatus *cuvidGetDecodeStatus;
     tcuvidReconfigureDecoder *cuvidReconfigureDecoder;
@@ -452,6 +454,8 @@ static inline int cuvid_load_functions(CuvidFunctions **functions, void *logctx)
     LOAD_SYMBOL_OPT(cuvidGetDecoderCaps, tcuvidGetDecoderCaps, "cuvidGetDecoderCaps");
     LOAD_SYMBOL(cuvidCreateDecoder, tcuvidCreateDecoder, "cuvidCreateDecoder");
     LOAD_SYMBOL(cuvidDestroyDecoder, tcuvidDestroyDecoder, "cuvidDestroyDecoder");
+    LOAD_SYMBOL_OPT(cuvidRegisterDecodeSurfaces, tcuvidRegisterDecodeSurfaces, "cuvidRegisterDecodeSurfaces");
+    LOAD_SYMBOL_OPT(cuvidDecodePictureAsync, tcuvidDecodePictureAsync, "cuvidDecodePictureAsync");
     LOAD_SYMBOL(cuvidDecodePicture, tcuvidDecodePicture, "cuvidDecodePicture");
     LOAD_SYMBOL(cuvidGetDecodeStatus, tcuvidGetDecodeStatus, "cuvidGetDecodeStatus");
     LOAD_SYMBOL(cuvidReconfigureDecoder, tcuvidReconfigureDecoder, "cuvidReconfigureDecoder");

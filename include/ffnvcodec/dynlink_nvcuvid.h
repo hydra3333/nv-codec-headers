@@ -1,7 +1,7 @@
 /*
  * This copyright notice applies to this header file only:
  *
- * Copyright (c) 2010-2024 NVIDIA Corporation
+ * Copyright (c) 2010-2026 NVIDIA Corporation
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -51,7 +51,6 @@ extern "C" {
 
 typedef void *CUvideosource;
 typedef void *CUvideoparser;
-typedef long long CUvideotimestamp;
 
 
 /************************************************************************/
@@ -287,7 +286,7 @@ typedef struct _CUVIDSEIMESSAGEINFO
 //! \struct CUVIDAV1SEQHDR
 //! AV1 specific sequence header information
 /****************************************************************/
-typedef struct {
+typedef struct _CUVIDAV1SEQHDR {
     unsigned int max_width;
     unsigned int max_height;
     unsigned char reserved[1016];
